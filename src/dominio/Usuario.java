@@ -12,9 +12,9 @@ public class Usuario {
     public Usuario(UsuarioBuilder builder) {
         this.apellidos = builder.apellidos;
         this.nombres = builder.nombres;
-        this.edad = edad;
-        this.telefono = telefono;
-        this.direccion = direccion;
+        this.edad = builder.edad;
+        this.telefono = builder.telefono;
+        this.direccion = builder.direccion;
     }
 
     public String getNombres() {
@@ -35,6 +35,15 @@ public class Usuario {
 
     public String getDireccion() {
         return direccion;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario: " + this.apellidos + " " +
+                this.nombres + ", " +
+                this.edad + " años, " +
+                this.telefono + ", " +
+                this.direccion;
     }
 
     public static class UsuarioBuilder {
